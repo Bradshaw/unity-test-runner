@@ -2,6 +2,9 @@ name: 'Unity - Test runner'
 author: Webber Takken <webber@takken.io>
 description: 'Run tests for any Unity project.'
 inputs:
+  dockerUser:
+    required: false
+    description: 'User to run docker as.'
   unityVersion:
     required: false
     default: '2019.2.11f1'

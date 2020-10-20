@@ -14,6 +14,7 @@ class Input {
 
   static getFromUser() {
     // Input variables specified in workflow using "with" prop.
+    const dockerUser = getInput('dockerUser') || '';
     const unityVersion = getInput('unityVersion') || '2019.2.11f1';
     const testMode = getInput('testMode') || 'all';
     const rawProjectPath = getInput('projectPath') || '.';
@@ -45,6 +46,7 @@ class Input {
 
     // Return sanitised input
     return {
+      dockerUser,
       unityVersion,
       projectPath,
       testMode,

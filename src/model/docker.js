@@ -19,6 +19,7 @@ class Docker {
 
   static async run(image, parameters, silent = false) {
     const {
+      dockerUser,
       unityVersion,
       workspace,
       projectPath,
@@ -29,6 +30,7 @@ class Docker {
     } = parameters;
 
     const command = `docker run \
+        ${dockerUser.length > 0 ? `--user ${dockerUser}` : ''} \
         --workdir /github/workspace \
         --rm \
         --env UNITY_LICENSE \
